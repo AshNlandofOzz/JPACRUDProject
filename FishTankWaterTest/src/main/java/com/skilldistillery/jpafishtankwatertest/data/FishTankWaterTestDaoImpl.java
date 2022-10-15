@@ -30,20 +30,35 @@ public class FishTankWaterTestDaoImpl implements FishTankDAO {
 
 	@Override
 	public FishTankWaterTest create(FishTankWaterTest newWaterTest) {
-		// TODO Auto-generated method stub
-		return null;
+		em.persist(newWaterTest);
+		em.flush();
+		return newWaterTest;
 	}
 
 	@Override
-	public FishTankWaterTest update(int testId, FishTankWaterTest newtest) {
-		// TODO Auto-generated method stub
-		return null;
+	public FishTankWaterTest update(int testId, FishTankWaterTest test) {
+		FishTankWaterTest updated = em.find(FishTankWaterTest.class, testId);
+		if (updated != null) {
+			updated.setAmmonia(test.getAmmonia());
+			updated.setNitrates(test.getNitrates());
+			updated.setNitrites(test.getNitrites());
+			updated.setPh(test.getPh());
+			updated.setDatetested(test.getDatetested());
+			em.persist(updated);
+		}
+		return updated;
 	}
 
 	@Override
 	public boolean deleteById(int testId) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean successfullyRemoved = false;
+		FishTankWaterTest removed = em.find(FishTankWaterTest.class, testId);
+		if (removed != null) {
+			em.remove(removed);
+			successfullyRemoved = !em.contains(removed);
+			em.persist(removed);
+		}
+		return successfullyRemoved;
 	}
 
 }

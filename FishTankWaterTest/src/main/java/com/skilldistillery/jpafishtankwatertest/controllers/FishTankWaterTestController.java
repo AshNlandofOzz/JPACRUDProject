@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.skilldistillery.jpafishtankwatertest.data.FishTankDAO;
+import com.skilldistillery.jpafishtankwatertest.entities.FishTankWaterTest;
 
 @Controller
 public class FishTankWaterTestController {
@@ -17,6 +18,13 @@ public class FishTankWaterTestController {
 	public String index(Model model) {
 		model.addAttribute("fishTankWaterTests", tankDao.findAll());
 		return "index";
+	}
+	
+	@RequestMapping(path= {"showTest.do"})
+	public String showTest(Integer id, Model model) {
+		FishTankWaterTest test = tankDao.findById(id);
+		model.addAttribute("FishTankWaterTest", test);
+		return "test/showTest";
 	}
 
 }
