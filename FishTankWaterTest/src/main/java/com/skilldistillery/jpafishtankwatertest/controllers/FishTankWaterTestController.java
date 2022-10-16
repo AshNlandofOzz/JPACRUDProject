@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.skilldistillery.jpafishtankwatertest.data.FishTankDAO;
 import com.skilldistillery.jpafishtankwatertest.entities.FishTankWaterTest;
@@ -29,7 +30,8 @@ public class FishTankWaterTestController {
 	}
 	
 	@RequestMapping(path = {"addTest.do"}, method = RequestMethod.POST)
-	public String addTest(FishTankWaterTest newTest) {
+	public String addTest(FishTankWaterTest newTest, Model model) {
+		model.addAttribute("fishTankWaterTests", tankDao.findAll());
 		newTest = tankDao.create(newTest);
 		return "index";
 	}
@@ -38,5 +40,22 @@ public class FishTankWaterTestController {
 	public String create(Model model ) {
 		return "test/addTest";
 	}
+	
+	@RequestMapping(path= {"delete.do"})
+	public String deleteTest(Integer id, Model model) {
+		boolean deleted = tankDao.deleteById(id);
+		model.addAttribute("FishTankWaterTest", deleted);
+		return "test/delete";
+	}
+	@RequestMapping(path= {"deleteTestConfirmation.do"}, method = RequestMethod.GET)
+	public ModelAndView removeInShowTest(int id) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("FishTankWaterTest", tankDao.findById(id));
+		mv.setViewName("test/deleteTestConfirmation");
+		return mv;
+	}
+	
+	
+	
 
 }

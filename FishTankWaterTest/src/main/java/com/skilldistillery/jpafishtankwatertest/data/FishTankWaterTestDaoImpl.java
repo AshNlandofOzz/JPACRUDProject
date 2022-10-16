@@ -56,7 +56,6 @@ public class FishTankWaterTestDaoImpl implements FishTankDAO {
 		if (removed != null) {
 			em.remove(removed);
 			successfullyRemoved = !em.contains(removed);
-			em.persist(removed);
 		}
 		return successfullyRemoved;
 	}

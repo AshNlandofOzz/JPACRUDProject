@@ -17,12 +17,13 @@
 			value="Show Test" />
 		<c:forEach var="tanktest" items="${fishTankWaterTests }">
 			<ul>
-				<li><a href="showTest.do?id=${tanktest.id}">${tanktest.datetested}</a></li>
+				<li><a href="showTest.do?id=${tanktest.id}">ID:${tanktest.id} Date:${tanktest.datetested}</a></li>
 			</ul>
 		</c:forEach>
-		
-		
-			<a href="createPage.do"> <input type="button" value="Add a new test"  /></a>
-			<!--  <input type="submit" value="Add a new test"  /> -->
+	</form>
+
+	<a href="createPage.do"> <input type="button"
+		value="Add a new test" /></a>
+	<!--  <input type="submit" value="Add a new test"  /> -->
 </body>
 </html>

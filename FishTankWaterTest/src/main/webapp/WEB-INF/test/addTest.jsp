@@ -10,7 +10,7 @@
 	<h1>Add Test</h1>
 
 	<form action="addTest.do" method="POST">
-		Date: </label>: <input type="text" name="datetested" /><br>
+		Date: <input type="text" name="datetested" /><br>
 		Ammonia: <input type="number" step="0.01" name="ammonia"/><br>
 		Nitrites: <input type="number" step="0.01" name="nitrites" /> <br>
 		Nitrates: <input type="number" step="0.01" name="nitrates" /><br>
