@@ -1,5 +1,6 @@
 package com.skilldistillery.jpafishtankwatertest.data;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -31,7 +32,6 @@ public class FishTankWaterTestDaoImpl implements FishTankDAO {
 	@Override
 	public FishTankWaterTest create(FishTankWaterTest newWaterTest) {
 		em.persist(newWaterTest);
-		em.flush();
 		return newWaterTest;
 	}
 

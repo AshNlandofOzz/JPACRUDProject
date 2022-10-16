@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.skilldistillery.jpafishtankwatertest.data.FishTankDAO;
 import com.skilldistillery.jpafishtankwatertest.entities.FishTankWaterTest;
@@ -25,6 +26,17 @@ public class FishTankWaterTestController {
 		FishTankWaterTest test = tankDao.findById(id);
 		model.addAttribute("FishTankWaterTest", test);
 		return "test/showTest";
+	}
+	
+	@RequestMapping(path = {"addTest.do"}, method = RequestMethod.POST)
+	public String addTest(FishTankWaterTest newTest) {
+		newTest = tankDao.create(newTest);
+		return "index";
+	}
+	
+	@RequestMapping(path= {"createPage.do"})
+	public String create(Model model ) {
+		return "test/addTest";
 	}
 
 }

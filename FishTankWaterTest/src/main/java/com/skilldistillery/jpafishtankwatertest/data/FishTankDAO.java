@@ -10,7 +10,7 @@ public interface FishTankDAO {
 	
 	FishTankWaterTest findById(int testId);
 	
-	FishTankWaterTest create(FishTankWaterTest newWaterTest);
+	FishTankWaterTest create(FishTankWaterTest test);
 	
 	FishTankWaterTest update(int testId, FishTankWaterTest newtest);
 

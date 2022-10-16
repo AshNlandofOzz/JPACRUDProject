@@ -20,5 +20,9 @@
 				<li><a href="showTest.do?id=${tanktest.id}">${tanktest.datetested}</a></li>
 			</ul>
 		</c:forEach>
+		
+		
+			<a href="createPage.do"> <input type="button" value="Add a new test"  /></a>
+			<!--  <input type="submit" value="Add a new test"  /> -->
 </body>
 </html>

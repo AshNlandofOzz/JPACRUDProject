@@ -1,6 +1,6 @@
 package com.skilldistillery.jpafishtankwatertest.entities;
 
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "watertestresult")
@@ -17,16 +18,16 @@ public class FishTankWaterTest {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	private Double nitrates;
+	private double nitrates;
 	
-	private Double nitrites;
+	private double nitrites;
 	
-	private Double ammonia;
+	private double ammonia;
 	
 	@Column(name="PH")
-	private Double ph;
+	private double ph;
 	
-	private Date datetested;
+	private String datetested;
 
 	
 	@Override
@@ -35,75 +36,60 @@ public class FishTankWaterTest {
 				+ ammonia + ", ph=" + ph + ", datetested=" + datetested + "]";
 	}
 
-
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
-	public Double getNitrates() {
+	public double getNitrates() {
 		return nitrates;
 	}
 
-
-	public void setNitrates(Double nitrates) {
+	public void setNitrates(double nitrates) {
 		this.nitrates = nitrates;
 	}
 
-
-	public Double getNitrites() {
+	public double getNitrites() {
 		return nitrites;
 	}
 
-
-	public void setNitrites(Double nitrites) {
+	public void setNitrites(double nitrites) {
 		this.nitrites = nitrites;
 	}
 
-
-	public Double getAmmonia() {
+	public double getAmmonia() {
 		return ammonia;
 	}
 
-
-	public void setAmmonia(Double ammonia) {
+	public void setAmmonia(double ammonia) {
 		this.ammonia = ammonia;
 	}
 
-
-	public Double getPh() {
+	public double getPh() {
 		return ph;
 	}
 
-
-	public void setPh(Double ph) {
+	public void setPh(double ph) {
 		this.ph = ph;
 	}
 
-
-	public Date getDatetested() {
+	public String getDatetested() {
 		return datetested;
 	}
 
-
-	public void setDatetested(Date datetested) {
+	public void setDatetested(String datetested) {
 		this.datetested = datetested;
 	}
-
 
 	public FishTankWaterTest() {
 		
 	}
-
-
 	
-
-	
-	
+	public FishTankWaterTest(int id, String datetested, double nitrates, double nitrites, double ammonia, double ph){
+		
+	}
 
 }
