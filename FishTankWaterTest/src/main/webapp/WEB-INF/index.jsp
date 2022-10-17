@@ -22,7 +22,7 @@
 			value="Show Test" />
 		<c:forEach var="tanktest" items="${fishTankWaterTests }">
 			<ul>
-				<li><a href="showTest.do?id=${tanktest.id}">ID:${tanktest.id} Date:${tanktest.datetested}</a></li>
+				<li><a href="showTest.do?id=${tanktest.id}" style="color:white">ID:${tanktest.id} Date:${tanktest.datetested}</a></li>
 			</ul>
 		</c:forEach>
 	</form>
