@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Test Page</title>
+<jsp:include page="../bootstrapHead.jsp"/>
+</link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<main class="container-fluid">
 	<h1>Add Test</h1>
 
 	<form action="addTest.do" method="POST">
@@ -19,6 +22,8 @@
 			value="ADD TEST" /><br>
 			
 	</form>
+	</main>
+	<jsp:include page="../bootstrapFoot.jsp"/>
 
 
 

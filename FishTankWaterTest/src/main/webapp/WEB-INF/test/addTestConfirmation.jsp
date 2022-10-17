@@ -10,7 +10,7 @@
 </head>
 <body>
 <main class="container-fluid">
-<h1>You have UPDATED your test result.</h1>
+<h1>You have ADDED your test result.</h1>
 <a href="index.do"><input type="button" value="Main Page"/></a>
 	</main>
 	<jsp:include page="../bootstrapFoot.jsp"/>

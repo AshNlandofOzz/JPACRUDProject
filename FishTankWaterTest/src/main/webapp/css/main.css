@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+body {
+	background-color: black;
+	color: white;
+	  background-image: url(halfmoon-betta-fish.jpg);
+	  background-repeat: no-repeat;
+	  background-size: 100% 100%;
+}
+html{
+	height: 100%
+}

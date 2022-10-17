@@ -31,15 +31,20 @@ public class FishTankWaterTestController {
 	
 	@RequestMapping(path = {"addTest.do"}, method = RequestMethod.POST)
 	public String addTest(FishTankWaterTest newTest, Model model) {
-		model.addAttribute("fishTankWaterTests", tankDao.findAll());
+//		model.addAttribute("fishTankWaterTests", tankDao.findAll());
 		newTest = tankDao.create(newTest);
-		return "index";
+		return "test/addTestConfirmation";
 	}
 	
 	@RequestMapping(path= {"createPage.do"})
 	public String create(Model model ) {
 		return "test/addTest";
 	}
+	
+//	@RequestMapping(path= {"updatePage.do"})
+//	public String update(Model model ) {
+//		return "test/updateTestConfirmation";
+//	}
 	
 	@RequestMapping(path= {"delete.do"})
 	public String deleteTest(Integer id, Model model) {
@@ -54,8 +59,19 @@ public class FishTankWaterTestController {
 		mv.setViewName("test/deleteTestConfirmation");
 		return mv;
 	}
-	
-	
+	@RequestMapping(path= {"updateTestConfirmation.do"}, method = RequestMethod.GET)
+	public ModelAndView updateTestConfirmation(int id) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("FishTankWaterTest", tankDao.findById(id));
+		mv.setViewName("test/updateTestConfirmation");
+		return mv;
+	}
+	@RequestMapping(path = {"updateTest.do"}, method = RequestMethod.POST)
+	public String updateTest(int id, FishTankWaterTest updatedTest, Model model) {
+		updatedTest = tankDao.update(id, updatedTest);
+		model.addAttribute("FishTankWaterTest", updatedTest);
+		return "test/updateTest";
+	}
 	
 
 }

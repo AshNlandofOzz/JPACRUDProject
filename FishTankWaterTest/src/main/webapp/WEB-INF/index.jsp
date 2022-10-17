@@ -8,9 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Welcome to Fish Tank Water Test Tracker</title>
+<jsp:include page="bootstrapHead.jsp"/>
+</link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<h1>It's a matter of life or death!</h1>
+<main class="container-fluid">
+<div class="thebox">
+	<h1>Welcome to Fish Tank Water Test Tracker</h1>
+	<h2>It's a matter of life or death!</h2>
 
 	<form action="showTest.do" method="GET">
 		Test ID: <input type="text" name="id" /> <input type="submit"
@@ -25,5 +30,8 @@
 	<a href="createPage.do"> <input type="button"
 		value="Add a new test" /></a>
 	<!--  <input type="submit" value="Add a new test"  /> -->
+	</main>
+	<jsp:include page="bootstrapFoot.jsp"/>
+	</div>
 </body>
 </html>

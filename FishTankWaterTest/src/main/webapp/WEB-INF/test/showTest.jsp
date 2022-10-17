@@ -5,8 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Test Details</title>
+<jsp:include page="../bootstrapHead.jsp"/>
+</link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+<main class="container-fluid">
 <h5>TEST Results</h5>
 <table>
 <tr>
@@ -29,7 +32,11 @@
 <input type="submit" type="button" value="Delete this test" />
 		</form>
 		
-<a href="updateTest.do"> <input type="button"
-		value="update this test" /></a>
+<form action="updateTestConfirmation.do" action="GET">
+<input type="hidden" name="id" value="${FishTankWaterTest.id}"/>
+<input type="submit" type="button" value="Update this test" />
+		</form>
+			</main>
+	<jsp:include page="../bootstrapFoot.jsp"/>
 </body>
 </html>
